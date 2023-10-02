@@ -10,7 +10,7 @@ from typing import List
 from pathlib import Path
 from collections import defaultdict
 
-from llama-index import SimpleDirectoryReader
+from llama_index import SimpleDirectoryReader
 
 __all__ = ['hello', 'IngestionEngine']
 
@@ -20,11 +20,11 @@ class IngestionEngine(object):
     self.db_dir = db_dir
     self.db_type = db_type
     
-  def read_documents(self):
+  def read_docs(self):
     reader = SimpleDirectoryReader(input_dir=self.doc_dir)
     return reader.load_data()
     
-  def count_docs(docs):
+  def count_docs(self, docs):
     count = defaultdict(int)
     doc_list = set()
     pages = defaultdict(int)
